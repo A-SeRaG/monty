@@ -76,23 +76,14 @@ void F_function(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t L_function[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
-		{"pop", _pop},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_c},
-		{"pstr", print_s},
-		{"rotl", rotl},
-		{"rotr", rotr},
-		{NULL, NULL}};
-
+		{"push", add_to_stack}, {"pall", print_stack},
+		{"pint", print_top}, {"pop", _pop},
+		{"nop", nop}, {"swap", swap_nodes},
+		{"add", add_nodes}, {"sub", sub_nodes},
+		{"div", div_nodes}, {"mul", mul_nodes},
+		{"mod", mod_nodes}, {"pchar", print_c},
+		{"pstr", print_s}, {"rotl", rotl},
+		{"rotr", rotr}, {NULL, NULL}};
 	if (opcode[0] == '#')
 		return;
 	for (flag = 1, i = 0; L_function[i].opcode != NULL; i++)
@@ -115,7 +106,8 @@ void F_function(char *opcode, char *value, int ln, int format)
  * @ln: line numeber for the instruction.
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
- */
+*/
+
 void C_fun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *node;

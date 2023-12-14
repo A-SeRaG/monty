@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * errors - Prints error messages determined by its error number.
+ * errors1 - Prints error messages determined by its error number.
  * @err_num: The error number are the following:
  * (1) -> The user does not give any file or more than one file to the program.
  * (2) -> The file provided is not a file that can be opened or read.
@@ -42,7 +42,7 @@ void errors1(int err_num, ...)
 	exit(EXIT_FAILURE);
 }
 /**
- * errors - Prints error messages determined by its error number.
+ * errors2 - Prints error messages determined by its error number.
  * @err_num: The error number are the following:
  * (6) -> When the stack it empty for pint.
  * (7) -> When the stack it empty for pop.
@@ -56,6 +56,7 @@ void errors2(int err_num, ...)
 	va_list arg;
 	char *op;
 	int LN;
+
 	LN = va_arg(arg, unsigned int);
 	op = va_arg(arg, char *);
 
